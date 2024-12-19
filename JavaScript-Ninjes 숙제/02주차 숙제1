@@ -1,0 +1,15 @@
+let oo = [1,2,3,"이재혁",4]
+
+function change(index, i){
+    return oo[index] = i 
+}
+
+function pop(index){
+    return oo[index] = 0 
+}
+
+console.log(change(1, 10))
+console.log(oo)
+
+console.log(pop(2))
+console.log(oo)
