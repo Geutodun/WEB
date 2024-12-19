@@ -1,0 +1,39 @@
+https://nodejs.org/en/
+
+let oo = 1
+
+function abc(a, b){
+    oo +=1
+    return a+b
+}
+
+console.log(abc("DD","GG"))
+console.log("GGG"+abc("DD","LL"))
+
+function aaa(n, m){
+    oo += 1
+    return n-m
+}
+
+console.log("뺀 값 ="+aaa(10,5))
+
+document.write("오라오라오라")
+
+let bb = prompt("Enter name")
+
+console.log(bb)
+document.write("이름:"+bb)
+console.log("정답:"+oo)
+
+let pp = [10, 20, "GG"]
+console.log(pp)
+pp.push("ww")
+console.log(pp)
+
+pp[0]=200
+console.log(pp)
+
+pp.pop()
+console.log(pp)
+
+process.stdout.write()
