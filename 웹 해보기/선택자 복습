@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		p:nth-child(2n) {
+			background-color: red;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+	<P>123</P>
+
+</body>
+</html>
