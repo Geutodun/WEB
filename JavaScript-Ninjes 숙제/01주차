@@ -1,0 +1,32 @@
+console.log("WWW")
+var nameF = "오라오라오라오라오라"   // 변수선언 == variable
+var age = "ㅇㅇ"
+let ppap = "수원역 4번 출구"
+let number = 123154
+
+console.log(nameF)
+
+console.log(ppap)
+
+console.log(number)
+
+const Myname = "이재혁"
+
+console.log(Myname)
+console.log(typeof(Myname))
+
+
+let a = b = 10
+let c = 5
+a = c
+c = a+b
+console.log(a)
+console.log(b)
+console.log(c)
+console.log("무다무다무다무다무다")
+
+if(nameF){
+    console.log(nameF)
+}else{
+    console.log("찾을수 없는 값입니다.")
+}
