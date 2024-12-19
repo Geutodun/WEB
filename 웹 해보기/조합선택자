@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+	<style>
+		div ~ p {
+			background: yellow;
+		}
+		div ~ section {
+			background: lightgreen;
+			color: red;
+			font-size: 25px;
+			text-align: right;
+			text-decoration: underline overline;
+			font-style: italic;
+		}
+
+	</style>
+
+</head>
+
+
+
+<body>
+	<p>문단1</p>
+	<div>
+		<p>div 포함된 문단2</p>
+	</div>
+	<p>문단3</p>
+	<p>문단4</p>
+	<section>문단5</section>
+	<br>
+	<p>문단6</p>
+	<p>문단7</p>
+</body>
+
+
+
+
+</html>
