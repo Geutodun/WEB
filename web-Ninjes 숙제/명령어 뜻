@@ -1,0 +1,53 @@
+<head> </head> - 여러 부가적인 내용을 알려주는 영역
+
+<body> </body> - 본 내용을 알려주는 영역
+
+<title> </title> :제목 - 웹 문서의 제목을 알려줌
+
+<h1> </h1> heading:제목 - 문서(page), 섹션(section), 문단(paragraph), 장(chapter) 등 구획화된 내용에 대한 제목을 의미(내용의 중심내용)
+
+<p> </p> paragraph:문단  - 문단을 구분하기 위해 사용
+
+<br> </br> Line Break:강제 줄바꿈 - 줄을 바꾸기 위해 사용
+
+<b> </b> bold:굵은 - 글을 굵은 글씨로 바꺼줌
+
+<sup> </sup> superscript:위에 쓴 - 글을 제곱한 것처럼 글자 위에 표시해줌
+
+<sub> </sub> subscript:아래에 쓴 - sup랑 반대로 글자를 아래로 보냄
+
+<hr> or <hr /> horizontal line:수평으로 그어진 선 - 내용을 구분하거나 주제를 변화 시킬때 사용
+
+<strong> </strong> strong:강한 - 굵은 글씨로 바까줌
+
+<blockquote cite-"">  </blockquote> blockquote:인용문 - 다른 출처로부터 인용된 블럭을 의미
+
+<q> </q> double quotation marks:큰 따옴표 - 문장을 큰따옴표 안에 넣고 싶을때 사용
+
+<abbr title="축약 내용"> </abbr> abbreviation:축약어 - 마우스 커서를 위에 뜨면 생략한 내용이 보임
+
+<dfn> </dfn>  definition:정의 - 전문용어 등의 뜻을 정의할 때 사용
+
+<ins> </ins> - 태그는 내용의 추가를 의미 
+
+<del> </del> deletion:삭제 - 태그는 내용의 삭제를 의미(줄을 긁어서 없앤 것처럼 함)
+
+dl - definition list
+
+dt- definition title
+
+dd- definition data
+
+unordered list  - ul
+
+ordered list === ol
+
+<i>
+
+<em>
+
+<cite>
+
+<address>
+
+<s> 
