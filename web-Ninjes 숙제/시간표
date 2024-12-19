@@ -1,0 +1,102 @@
+<html>
+<head>
+ <title>Lists</title>
+</head>
+<body>
+
+    
+
+       <table border="1px" bgcolor="#efefef" >
+        <tr>
+            <th>시간</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+        <tr>
+            <th>9:00~10:00</th>
+            <td rowspan="2">기초웹프로그래밍</td>
+            <td rowspan="2">기초글쓰기</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>10:00~11:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>11:00~12:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>12:00~13:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>13:00~14:00</th>
+            <td></td>
+            <td rowspan="3">컴퓨팅 사고</td>
+            <td rowspan="2">의사소통영어1</td>
+            <td rowspan="2">기초C프로그래밍</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>14:00~15:00</th>
+            <td></td>
+            <td>채플1</td>
+        </tr>
+        <tr>
+            <th>15:00~16:00</th>
+            <td rowspan="2">기초C프로그래밍</td>
+            <td>전공의 이해</td>
+            <td rowspan="2">기초웹프로그래밍</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>16:00~17:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>17:00~18:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>18:00~19:00</th>
+            <td></td>
+            <td></td>
+            <td rowspan="2">AI이해및활용</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>19:00~20:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+       </table>
+
+       <img src="시간표.jpg" width="300" height="600" title="시간표" alt="시간표">
+       
+</body>
+</html>
