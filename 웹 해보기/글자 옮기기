@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+	
+
+	
+
+	</style>
+</head>
+<body>
+	
+		<figure>
+			<img src="aa.jpg">
+			<figcaption style="padding: 0px 0px 0px 200px;">[풍경1]</figcaption>
+		</figure>
+
+	
+		<figure>
+			<img src="aa.jpg">
+			<figcaption style="padding: 0px 0px 0px 200px;">[풍경2]</figcaption>
+		</figure>
+
+
+
+</html>
