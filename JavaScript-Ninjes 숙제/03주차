@@ -1,0 +1,61 @@
+var per = {name:"홍홍홍",age:34,job:"코딩러"}
+console.log(per) 
+console.log(per.job)
+
+let ppp = Object()
+ppp["name"] = "정정정"
+console.log(ppp.name)
+
+var sss = {name:"홍홍",school:"배재",age:4,job:"코딩"}
+
+class sssObj{
+    constructor(name,age,job){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+   
+
+}
+let nnn = new sssObj("dd",11,"sw")
+console.log(nnn)
+
+
+
+class hhhObj{
+    constructor(name="no name",age="no age",job="no job"){
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+   
+
+}
+let mmm = new hhhObj()
+console.log(mmm)
+
+
+//constructor() { ... } //기본 생성자
+
+document.write("<h1>asdasd</h1>")
+
+window.onload=function(){
+    alert("I am ready")
+
+    let idClickme = document.getElementsByClassName('Clickme')
+    
+
+}
+
+
+//$('.target').keyup(function(e){
+//    e.preventDefault()
+//    console.log(this.value)
+//
+//})
+
+$("form").submit((e)=>{
+    e.preventDefault()
+    let name = $('.target').val()
+    console.log(name)  
+})
