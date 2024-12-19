@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+	<style>
+		a[target=_blank] {
+			background-color: yellow;
+		}
+
+	</style>
+
+</head>
+
+
+
+<body>
+	<p>타겟은 노란색으로 표시</p>
+	<a href="https://www.google.co.kr/">구글</a>
+	<a href="https://www.naver.com/" target="_blank">네이버</a>
+	<a href="https://www.daum.net/" target="_top">다음</a>
+</body>
+
+
+
+
+</html>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+	<style>
+		[title~=tag] {
+			border: 15px solid blue;
+		}
+
+	</style>
+
+</head>
+
+
+
+<body>
+	<p>단어 tag포함하면 다 선택</p>
+	<img src="./images/1.jpg" title="box tag" tag weidth="150">
+	<img src="./images/2.jpg" title="tag" weidth="150">
+	<img src="./images/3.jpg" title="box" weidth="150">
+</body>
+
+
+
+
+</html>
