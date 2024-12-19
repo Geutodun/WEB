@@ -1,0 +1,55 @@
+console.log("Hello World") == print
+
+var 변수 = 내용 - 변수 선언
+let 변수 = 내용 -   ""
+
+const 변수 = 내용 - 상수
+
+console.log(typeof(변수)) - 타입 확인
+
+
+if(조건) {}                         ---    ( NaN 0 과 null은 거짓이란 뜻),(   == - 값,  === - 값+데이터 타입   ) 
+else(조건) {}
+
+(조건)?참:거짓 - if 대신
+
+switch()
+  case 
+  break
+
+function 이름(n, m){
+    return n-m                        -   함수
+}
+
+let 이름=(n,m =>{
+  return n-m                          -   함수
+}
+
+prompt("내용")    -   input함수
+
+변수.push("내용")   -  리스트 안에 값 추가
+
+pp[순서]=바꿀 내용   -  리스트 안의 값 바꾸기
+
+변수.pop() - 리스트 안의 값 빼기
+
+*리스트는 3차원까지 가능
+
+변수.length - 리스트 길이 출력
+
+변수.reverse - 리스트 값을 랜덤으로 섞음
+
+변수.sort - 리스트 값 정리(아스키 코드가 작은 순서대로)
+
+변수.indexOf("문자열")  - 어디에 있는지 출력
+
+
+var per = {name:"홍홍홍",age:34,job:"코딩러"}   -  객체 
+console.log(per) 
+console.log(per.job)
+
+let ppp = Object()          - 객체라고 선언
+ppp["name"] = "정정정"         -  객체에 내용 추가
+console.log(ppp.name)
+
+document.write("<h1>asdasd</h1>") - 웹 페이지에 출력
