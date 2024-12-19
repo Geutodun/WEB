@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+		table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+		
+	</style>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th colspan="5">대회일정</th>
+		</tr>
+
+		<tr>
+			<th>주차</th>
+			<th>수요일 18:00~20:00</th>
+			<th>목요일 18:00~20:00</th>
+			<th>금요일 18:00~20:00</th>
+			<th>토요일 18:00~20:00</th>
+		</tr>
+
+		<tr>
+			<th>1주차</th>
+			<td>젠지 vs 한화</td>
+			<td>아프리카 vs 프레딧</td>
+			<td>샌드박스 vs 농심</td>
+			<td>T1 vs DWG</td>
+		</tr>
+
+		<tr>
+			<th>2주차</th>
+			<td>T1 vs 한화</td>
+			<td>샌드박스 vs 프레딧</td>
+			<td>젠지 vs 농심</td>
+			<td>아프리카 vs DWG</td>
+		</tr>
+
+		<tr>
+			<th>3주차</th>
+			<td>아프리카 vs 샌드박스</td>
+			<td>한화 vs DWG</td>
+			<td>T1 vs 농심</td>
+			<td>프레딧 vs 젠지</td>
+		</tr>
+
+		<tr>
+			<th>3주차</th>
+			<td>한화 vs 젠지</td>
+			<td>농심 vs 아프리카</td>
+			<th colspan="2" rowspan="2">휴식</th>
+		</tr>
+
+		<tr>
+			<th>4주차</th>
+			<td>DWG vs 샌드박스</td>
+			<td>프레딧 vs T1</td>
+		</tr>
+
+		<tr>
+			<th>5주차</th>
+			<td>프레딧 vs 아프리카</td>
+			<td>샌드박스 vs DWG</td>
+			<td>젠지 vs  T1</td>
+			<td>한화 vs 농심</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+
+	<style> 
+		table, td, th {
+			border: solid 1px;
+
+		}
+	
+		
+		
+
+		table{ 
+			border-collapse: collapse; 
+			
+		}
+
+	</style>
+</head>
+
+
+
+<body>
+	<table>         
+		<tr>
+			<th rowspan="2">구분</th>        
+			<th colspan="3">치킨</th>          
+			<th colspan="2">피자</th>         
+		</tr>
+
+
+		<tr>
+			<th>양념</th>
+			<th>후라이드</th>         
+			<th>간장</th>
+			<th>치즈크러스트</th>           
+			<th>페퍼로니</th>
+		</tr>
+		<tr>	
+			<th>가격</th>         
+			<td>13000원</td>
+			<td>14000원</td>
+			<td>15000원</td>
+			<td>16000원</td>
+			<td>17000원</td>        
+		</tr>
+
+
+
+	</table>
+   
+	
+	
+
+
+</body>
+
+
+
+
+</html>
