@@ -1,0 +1,88 @@
+숙제 : 텍스트 부분에 숫자를 입력해서 선택박스로 공싱르 정해서 계산한 값 출력
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>   
+<!--<script src="index.js"></script>-->
+
+
+
+<!--
+    <input type="text" id="userinput" class="in"/> <br>
+    <button onclick="handleClick()">click me</button>
+    
+    <script>
+        function handleClick(){
+         //$('.in')  === getElementByClassName('userinput').value  //id는 앞에 .대신 #하면 됨
+            let name = document.getElementById('userinput').value    //내가 입력한 내용을 나오게 하기
+            alert("이름:"+name)
+
+        }
+    </script>
+-->
+
+
+
+<input type="radio" id="item1" name="music" value="kpop"/>kpop<br>
+<input type="radio" id="item2" name="music" value="jpop"/>jpop<br>
+<input type="radio" id="item3" name="music" value="pop"/>pop<br>
+<input type="radio" id="item4" name="music" value="cpop"/>cpop<br>
+<!-- name이 같은 것은 하나만 선택 가능 -->
+
+<button onclick="handleRadio()">radio get</button>
+
+<script>
+
+function handleRadio(){
+    let item1 = document.getElementById('item1')
+    let item2 = document.getElementById('item2')
+    let item3 = document.getElementById('item3')
+    let item4 = document.getElementById('item4')
+
+    if(item1.checked==true){
+        alert("kpop이 선택 되었습니다.")
+    }
+    else if(item2.checked==true){
+        alert("jpop이 선택 되었습니다.")
+    }
+    else if(item3.checked==true){
+        alert("pop이 선택 되었습니다.")
+    }
+    else if(item4.checked==true){
+        alert("cpop이 선택 되었습니다.")
+    }
+}
+
+</script>
+<br>
+
+
+
+
+<select name="item" id="items">         
+    <option value="kpop">kpop</option>
+    <option value="jpop">jpop</option>
+    <option value="cpop">cpop</option>
+    <option value="jazz">jazz</option>
+    <option value="music">music</option>
+</select>
+<br>
+<button onclick="selectItem()">확인</button>
+
+<script>
+function selectItem(){
+    let songs = document.getElementById('items')
+    alert(songs.options[songs.selectedIndex].value)
+}
+
+</script>
+
+
+</body>
+</html>
