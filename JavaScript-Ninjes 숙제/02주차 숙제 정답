@@ -1,0 +1,40 @@
+ let num=5
+for(let i=0;i<num;i++){
+    for(let j=num-1;j>i;j--){
+        process.stdout.write(" ")
+    }
+		    
+    for(let j=0;j<2*i+1;j++){
+	    process.stdout.write("*")
+    }
+    console.log("\n")
+}
+	
+for(let i=1;i<num;i++){
+   for(let j=0;j<i;j++){
+    process.stdout.write(" ")
+   }
+	
+    for(let j=2*num-1;j>2*i;j--){
+        process.stdout.write("*")
+    }
+    console.log("\n")
+}
+
+
+  
+let oo = [1,2,3,"이재혁",4]
+
+function change(index, i){
+    return oo[index] = i 
+}
+
+function pop(index){
+    return oo[index] = 0 
+}
+
+console.log(change(1, 10))
+console.log(oo)
+
+console.log(pop(2))
+console.log(oo)
