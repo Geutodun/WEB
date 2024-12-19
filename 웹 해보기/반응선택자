@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+
+<html>
+
+
+<head>
+	<style>
+		p:hover {
+			color: red;
+			background: lightgreen;
+			font-size: 25px;
+			font-style: initial;
+			text-align: center;
+
+		}
+			
+		p:active {
+			color: blue;
+			background: yellow;
+			text-decoration: overline;
+			font-size: 10px;
+			text-align: right;
+		}
+
+	</style>
+
+</head>
+
+
+
+<body>
+	
+	<p>마우스 커서를 올리고 클릭해 보세요.</p>
+</body>
+
+
+
+
+</html>
