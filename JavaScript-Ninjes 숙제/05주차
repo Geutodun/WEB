@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+</head>
+<body>   
+    
+    <img src="wo.jpg" width="300" height="300" id="image1" onmouseover="increaseSize()" onmouseout="decreaseSize()"/>
+
+    <script>
+
+        var image = document.getElementById("image1")
+
+        function increaseSize(){
+            document.getElementById("image1").src="11.jpg"
+            console.log("i was called")
+            document.getElementById("image1").setAttribute("height","500px")
+            document.getElementById("image1").setAttribute("widtht","500px")
+        }
+
+        function decreaseSize(){
+            document.getElementById("image1").src="wo.jpg"
+            document.getElementById("image1").setAttribute("height","300px")
+            document.getElementById("image1").setAttribute("widtht","300px")
+            alert("500X500")
+
+        }
+    </script>
+    
+
+
+    <form action="" method="post" onsubmit="handleSubmit()">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+        <input type="submit" value="submit" id="clc"/>
+    </form>
+    <script>
+        let clc = document.getElementById("clc")
+        clc.addEventListener("click",(e)=>{e.preventDefault(); consile.log("i was ....")})
+        
+        //let handleSubmit = (e)=>{
+            //e.preventDefault();
+            //console.log("i was here")
+        //}
+      
+        function handleSubmit(e){
+            
+            console.log("sss")
+        }
+
+    </script>    
+
+
+</body>
+</html>
