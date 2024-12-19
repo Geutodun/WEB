@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <h3>그룹별 선택 항목을 제공합니다.</h3>
+    <form>
+        <label>전공 분야를 입력하세요.<br>
+        <input type="text" name="major" list="majorlist">
+        <datalist id="majorlist">
+            <option value="Sogtware">소프트웨어</option>
+            <option value="Robot">로봇</option>
+            <option value="System">시스템</option>
+            <option value="Service">서비스</option>
+            <option value="Education">교육</option>
+        </datalist>
+
+       <p></p>
+       <input type="submit" value="제출">
+       <input type="reset" value="다시 작성">
+       </label>
+    </form>
+
+</body>
+</html>
