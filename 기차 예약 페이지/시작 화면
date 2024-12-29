@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이드 쇼</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 600px; /* 슬라이드 쇼의 최대 너비 */
+      margin: auto; /* 중앙 정렬 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    .mySlides {
+      display: none; /* 기본적으로 모든 슬라이드를 숨김 */
+    }
+
+    img {
+      width: 80%; /* 이미지가 컨테이너의 80% 크기로 조정 */
+      max-width: 100%; /* 최대 너비를 100%로 설정 */
+      height: auto; /* 비율을 유지하며 높이 자동 조정 */
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      transform: translateY(-50%); /* 화살표를 수직 중앙에 정렬 */
+    }
+
+    .prev {
+      left: 10px; /* 왼쪽 화살표 위치 */
+    }
+
+    .next {
+      right: 10px; /* 오른쪽 화살표 위치 */
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    body {
+      background-image: url('../static/images/산정호수.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .mySlides img {
+      width: 100%; /* 이미지 너비를 100%로 설정 */
+      height: auto; /* 비율에 맞게 높이 자동 조정 */
+      max-height: 400px; /* 최대 높이 설정 */
+    }
+
+    .button-container {
+      text-align: center; /* 버튼을 중앙 정렬 */
+      margin-top: 20px; /* 버튼과 슬라이드 사이의 간격 */
+    }
+
+    .train-reservation-button {
+      background-color: #4CAF50; /* 버튼 배경색 */
+      color: white; /* 버튼 텍스트 색상 */
+      padding: 15px 32px; /* 버튼 패딩 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+      text-decoration: none; /* 텍스트 장식 제거 */
+      display: inline-block; /* 인라인 블록으로 설정 */
+      font-size: 16px; /* 폰트 크기 */
+      margin: 4px 2px; /* 버튼 간격 */
+      cursor: pointer; /* 커서 포인터로 변경 */
+      border: none; /* 테두리 제거 */
+      border-radius: 4px; /* 모서리 둥글게 */
+      transition: background-color 0.3s; /* 배경색 전환 효과 */
+    }
+
+    .train-reservation-button:hover {
+      background-color: #45a049; /* 호버 시 배경색 변경 */
+    }
+
+    .time-display {
+      position: absolute; /* 절대 위치로 설정 */
+      top: 530px; /* 상단에서 10px 아래 */
+      left: 50%; /* 슬라이드 중앙 */
+      transform: translateX(-50%); /* 중앙 정렬 */
+      background-color: rgba(0, 0, 0, 0.7); /* 반투명 배경 */
+      color: white; /* 텍스트 색상 */
+      padding: 5px 40px; /* 패딩 */
+      border-radius: 4px; /* 모서리 둥글게 */
+      font-size: 50px; /* 글자 크기 */
+    }
+  </style>
+</head>
+<body>
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="../static/images/123.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="../static/images/1111.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="../static/images/2222.png" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="../static/images/tttt.png" style="width:100%">
+  </div>
+  <!-- 추가 이미지 -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<div class="time-display">현재 날짜 및 시간</div>
+<!-- 기차 예약 버튼 추가 -->
+<div class="button-container">
+  <button class="train-reservation-button">기차 예약</button>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; // 모든 슬라이드 숨김
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } // 슬라이드 인덱스 초기화
+    slides[slideIndex - 1].style.display = "block"; // 현재 슬라이드 표시
+    setTimeout(showSlides, 3000); // 3초마다 슬라이드 전환
+  }
+
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex > document.getElementsByClassName("mySlides").length) { slideIndex = 1 }
+    if (slideIndex < 1) { slideIndex = document.getElementsByClassName("mySlides").length }
+    showSlidesManually();
+  }
+
+  function showSlidesManually() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; // 모든 슬라이드 숨김
+    }
+    slides[slideIndex - 1].style.display = "block"; // 현재 슬라이드 표시
+  }
+
+  function updateTime() {
+    const now = new Date(); // 현재 시간 가져오기
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    let dateString = now.toLocaleDateString('ko-KR', options); // 날짜 문자열 가져오기
+
+    // 날짜 문자열에서 마지막 점(.) 제거
+    if (dateString.endsWith('.')) {
+      dateString = dateString.slice(0, -1); // 마지막 문자 제거
+    }
+
+    const hours = String(now.getHours()).padStart(2, '0'); // 시
+    const minutes = String(now.getMinutes()).padStart(2, '0'); // 분
+    const seconds = String(now.getSeconds()).padStart(2, '0'); // 초
+    const timeString = `${hours}:${minutes}:${seconds}`; // 시간 문자열 생성
+
+    // 날짜와 시간을 결합
+    const dateTimeString = `날짜 : ${dateString}  시간 : ${timeString}`;
+
+    // 모든 슬라이드에 날짜와 시간 업데이트
+    const timeDisplays = document.querySelectorAll('.time-display');
+    timeDisplays.forEach(display => {
+      display.textContent = dateTimeString; // 날짜와 시간 표시
+    });
+  }
+
+  // 1초마다 시간 업데이트
+  setInterval(updateTime, 1000);
+
+  // 페이지 로드 시 시간 초기화
+  updateTime();
+</script>
+</body>
+</html>
