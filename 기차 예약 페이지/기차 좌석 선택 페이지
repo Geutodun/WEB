@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기차 좌석 예약</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .container {
+            text-align: center;
+        }
+        .train-seat {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr); /* 10열로 설정 */
+            gap: 10px;
+            max-width: 1000px; /* 너비 조정 */
+            margin: 0 auto;
+        }
+        .seat {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .seat.selected {
+            background-color: #76c7c0;
+        }
+        .seat.reserved {
+            background-color: #ff6b6b;
+            cursor: not-allowed;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .hocha-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>기차 좌석 예약</h1>
+
+    <div class="hocha-buttons">
+        <button onclick="selectHocha(1)">1호차</button>
+        <button onclick="selectHocha(2)">2호차</button>
+        <button onclick="selectHocha(3)">3호차</button>
+        <button onclick="selectHocha(4)">4호차</button>
+        <button onclick="selectHocha(5)">5호차</button>
+    </div>
+
+    <div class="train-seat">
+        <!-- 각 좌석에 호차 데이터를 추가 -->
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">1</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">2</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">3</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">4</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">5</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">6</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">7</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">8</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">9</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">10</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">11</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">12</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">13</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">14</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">15</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">16</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">17</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">18</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">19</div>
+        <div class="seat" data-hocha="1" onclick="toggleSeat(this)">20</div>
+
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">1</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">2</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">3</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">4</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">5</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">6</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">7</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">8</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">9</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">10</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">11</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">12</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">13</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">14</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">15</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">16</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">17</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">18</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">19</div>
+        <div class="seat hidden" data-hocha="2" onclick="toggleSeat(this)">20</div>
+
+        <!-- 추가 좌석들 -->
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">1</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">2</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">3</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">4</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">5</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">6</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">7</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">8</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">9</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">10</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">11</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">12</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">13</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">14</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">15</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">16</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">17</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">18</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">19</div>
+        <div class="seat hidden" data-hocha="3" onclick="toggleSeat(this)">20</div>
+
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">1</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">2</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">3</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">4</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">5</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">6</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">7</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">8</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">9</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">10</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">11</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">12</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">13</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">14</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">15</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">16</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">17</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">18</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">19</div>
+        <div class="seat hidden" data-hocha="4" onclick="toggleSeat(this)">20</div>
+
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">1</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">2</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">3</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">4</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">5</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">6</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">7</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">8</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">9</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">10</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">11</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">12</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">13</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">14</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">15</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">16</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">17</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">18</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">19</div>
+        <div class="seat hidden" data-hocha="5" onclick="toggleSeat(this)">20</div>
+        <!-- 필요한 만큼 더 추가 -->
+    </div>
+
+    <div class="button-container">
+        <button onclick="reserveSeats()">예약하기</button>
+    </div>
+</div>
+
+<script>
+    let currentHocha = 1;
+
+    function toggleSeat(seat) {
+        if (!seat.classList.contains('reserved')) {
+            seat.classList.toggle('selected');
+        }
+    }
+
+    function reserveSeats() {
+        const selectedSeats = document.querySelectorAll('.seat.selected');
+        if (selectedSeats.length === 0) {
+            alert('좌석을 선택하세요.');
+            return;
+        }
+        selectedSeats.forEach(seat => {
+            seat.classList.remove('selected');
+            seat.classList.add('reserved');
+        });
+        alert('예약이 완료되었습니다.');
+    }
+
+    function selectHocha(hocha) {
+        currentHocha = hocha;
+
+        const seats = document.querySelectorAll('.seat');
+        seats.forEach(seat => {
+            if (seat.dataset.hocha == hocha) {
+                seat.classList.remove('hidden');
+            } else {
+                seat.classList.add('hidden');
+            }
+        });
+    }
+
+    // 초기 상태로 1호차 활성화
+    selectHocha(1);
+</script>
+
+</body>
+</html>
