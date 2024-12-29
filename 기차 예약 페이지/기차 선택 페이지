@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Column Layout</title>
+  <style>
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px; /* 각 요소 사이의 간격 */
+      width: 100%;
+    }
+
+    .small label, .small input {
+      width: 90%; /* 입력 필드와 버튼의 넓이를 박스에 맞추기 */
+      max-width: 250px; /* 너무 커지지 않도록 제한 */
+      box-sizing: border-box; /* 패딩을 포함해 크기 계산 */
+    }
+
+    .small input[type="text"],
+    .small input[type="password"] {
+      height: 30px; /* 입력 필드 높이 설정 */
+      padding: 5px; /* 텍스트 내부 여백 */
+      font-size: 14px; /* 글자 크기 */
+      border: 1px solid #ccc; /* 테두리 스타일 */
+      border-radius: 5px; /* 모서리를 둥글게 */
+    }
+
+    .small input[type="submit"] {
+      height: 35px; /* 버튼 높이 설정 */
+      padding: 5px;
+      font-size: 14px;
+      background-color: green; /* 버튼 색상 */
+      color: white; /* 버튼 글자 색상 */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 90%; /* 버튼 넓이를 입력 필드와 동일하게 */
+      max-width: 250px;
+    }
+
+    .small input[type="submit"]:hover {
+      background-color: #0056b3; /* 마우스 오버 시 색상 변화 */
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px; /* 작은 박스와 큰 박스 사이에 20px 간격 추가 */
+    }
+
+    .small-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* 위아래 작은 박스 사이 간격 */
+    }
+
+    .box {
+      /*border: 2px solid black;*/
+    }
+
+    .small {
+      width: 300px;
+      height: 300px;
+      display: flex; /* 중앙 정렬을 위해 flexbox 활성화 */
+      flex-direction: column; /* 내부 요소를 세로로 배치 */
+      justify-content: center; /* 세로 방향 중앙 정렬 */
+      align-items: center; /* 가로 방향 중앙 정렬 */
+    }
+
+    .large {
+      width: 700px; /* 큰 박스 너비 */
+      min-height: 615px; /* 큰 박스 높이 */
+      display: flex;
+      flex-direction: column; /* 내부 요소를 세로로 배치 */
+      align-items: center; /* 가로 중앙 정렬 */
+      justify-content: center; /* 세로 중앙 정렬 */
+      gap: 20px; /* 요소 간 간격 */
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    /* 입력 필드와 드롭다운의 길이를 충분히 확보 */
+    .large select,
+    .large input[type="date"],
+    .large input[type="time"] {
+      width: 100%; /* 너비를 박스 너비의 90%로 설정 */
+      height: 50px; /* 높이 설정 */
+      font-size: 16px; /* 글자 크기 */
+      padding: 5px; /* 내부 여백 */
+      border: 1px solid #ccc; /* 테두리 */
+      border-radius: 5px; /* 둥근 모서리 */
+      box-sizing: border-box; /* 크기 계산에 테두리 포함 */
+    }
+
+    /* 텍스트 크기 */
+    .large div {
+      background-color: #e6f7ff; /* 요소의 배경색 */
+      width: 90%; /* 부모 컨테이너에 맞춘 너비 */
+      padding: 10px; /* 요소 내부 여백 */
+      margin-bottom: 10px; /* 요소 간 간격 */
+      border-radius: 5px; /* 둥근 모서리 */
+      box-sizing: border-box; /* 크기 계산 포함 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+    }
+
+    /* 텍스트 중앙 정렬 */
+    .large div p {
+      margin: 0;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* 라디오 버튼의 레이블 크기 및 간격 */
+    .large input[type="radio"] + label {
+      font-size: 18px; /* 라디오 버튼의 레이블 크기 */
+      margin-right: 15px; /* 버튼 간 간격 */
+    }
+
+    /* 라디오 버튼 크기 조정 */
+    .large input[type="radio"] {
+      transform: scale(1.5); /* 라디오 버튼 크기 증가 */
+      margin-right: 5px; /* 텍스트와 간격 */
+    }
+
+    .large input[type="submit"] {
+      height: 50px; /* 버튼 높이 */
+      width: 90%; /* 부모 너비에 정확히 맞춤 */
+      font-size: 16px; /* 글자 크기 */
+      background-color: cornflowerblue; /* 배경색 */
+      color: white; /* 글자색 */
+      border: none; /* 테두리 제거 */
+      border-radius: 0; /* 모서리를 둥글게 하지 않음 */
+      cursor: pointer; /* 클릭 가능한 커서 */
+      box-sizing: border-box; /* 크기 계산에 테두리와 패딩 포함 */
+      padding: 0; /* 버튼 내부 여백 제거 */
+    }
+
+    .large input[type="submit"]:hover {
+      background-color: #0056b3; /* 호버 시 색상 */
+    }
+
+
+
+    .slideshow-container {
+      position: relative;
+      max-width: 600px; /* 슬라이드 쇼의 최대 너비 */
+      margin: auto; /* 중앙 정렬 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    .mySlides {
+      display: none; /* 기본적으로 모든 슬라이드를 숨김 */
+    }
+
+    img {
+      width: 80%; /* 이미지가 컨테이너의 80% 크기로 조정 */
+      max-width: 100%; /* 최대 너비를 100%로 설정 */
+      height: auto; /* 비율을 유지하며 높이 자동 조정 */
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      transform: translateY(-50%); /* 화살표를 수직 중앙에 정렬 */
+    }
+
+    .prev {
+      left: 10px; /* 왼쪽 화살표 위치 */
+    }
+
+    .next {
+      right: 10px; /* 오른쪽 화살표 위치 */
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="small-container">
+    <div class="box small" style="background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+      <form>
+        <label for="id">아이디:</label>
+        <input type="text" id="id" name="id">
+        <br>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <input type="submit" value="로그인">
+        <input type="submit" value="회원가입">
+      </form>
+    </div>
+    <div class="box small">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="../static/images/123.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="../static/images/1111.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="../static/images/2222.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="../static/images/tttt.png" style="width:100%">
+        </div>
+        <!-- 추가 이미지 -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="box large" style="overflow-y: auto;">
+    <div>
+      <p>날짜 선택</p>
+      <input type="date" id="traindate" name="traindate">
+    </div>
+    <div>
+      <p>시간 선택</p>
+      <input type="time" id="traintime" name="traintime">
+    </div>
+    <div>
+      <p>출발지</p>
+      <select name="start" size="1">
+        <option value="Seoul">서울</option>
+        <option value="Busan">부산</option>
+        <option value="Daejeon">대전</option>
+        <option value="Suwon">수원</option>
+        <option value="Anyang" selected>안양</option>
+        <option value="Gangneung">강릉</option>
+        <option value="Jeonju">전주</option>
+        <option value="Daegu">대구</option>
+        <option value="Yeosu">여수</option>
+      </select>
+    </div>
+    <div>
+      <p>도착지</p>
+      <select name="end" size="1">
+        <option value="Seoul">서울</option>
+        <option value="Busan">부산</option>
+        <option value="Daejeon">대전</option>
+        <option value="Suwon">수원</option>
+        <option value="Anyang" selected>안양</option>
+        <option value="Gangneung">강릉</option>
+        <option value="Jeonju">전주</option>
+        <option value="Daegu">대구</option>
+        <option value="Yeosu">여수</option>
+      </select>
+    </div>
+    <div>
+      <p>인원</p>
+      <select name="end" size="1">
+        <option value="1" selected>1명</option>
+        <option value="2">2명</option>
+        <option value="3">3명</option>
+        <option value="4">4명</option>
+        <option value="5">5명</option>
+        <option value="6">6명</option>
+        <option value="7">7명</option>
+        <option value="8">8명</option>
+        <option value="9">9명</option>
+      </select>
+    </div>
+    <div>
+      <p style="text-align: center;">기차 선택</p>
+      <input type="radio" id="KTX" name="traim" value="KTX" checked />
+      <label for="KTX">KTX</label>
+      <input type="radio" id="ITX" name="traim" value="ITX" />
+      <label for="ITX">ITX</label>
+      <input type="radio" id="무궁화호" name="traim" value="무궁화호" />
+      <label for="무궁화호">무궁화호</label>
+    </div>
+    <input type="submit" value="승차권 예매">
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; // 모든 슬라이드 숨김
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 } // 슬라이드 인덱스 초기화
+    slides[slideIndex - 1].style.display = "block"; // 현재 슬라이드 표시
+    setTimeout(showSlides, 3000); // 3초마다 슬라이드 전환
+  }
+
+  function plusSlides(n) {
+    slideIndex += n;
+    if (slideIndex > document.getElementsByClassName("mySlides").length) { slideIndex = 1 }
+    if (slideIndex < 1) { slideIndex = document.getElementsByClassName("mySlides").length }
+    showSlidesManually();
+  }
+
+  function showSlidesManually() {
+    let slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; // 모든 슬라이드 숨김
+    }
+    slides[slideIndex - 1].style.display = "block"; // 현재 슬라이드 표시
+  }
+</script>
+</body>
+</html>
